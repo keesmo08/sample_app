@@ -1,0 +1,35 @@
+[33mcommit 39ffd4f23eeecc4983667b442e8d66933a571b70[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sun Jan 12 16:17:14 2014 -0600
+
+    Finish layout and routes
+
+[33mcommit 319f57c72167eb2bbf4a1e64f57fae2595f01442[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sun Jan 12 10:21:40 2014 -0600
+
+    Add a full_title helper
+
+[33mcommit 58c5a5c76ae50c995dde9c1c76336f3108e0dc4d[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sat Jan 11 16:38:43 2014 -0600
+
+    Finish static pages
+
+[33mcommit 74d5fb1c589fbbc77075ece96eafc575f0f80e75[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sat Jan 11 15:33:40 2014 -0600
+
+    Add a StaticPages controller
+
+[33mcommit 63cab64278be840b3f2f9b3d610118dd2359f6e8[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sat Jan 11 15:01:41 2014 -0600
+
+    Improve teh README
+
+[33mcommit 8f31e2a003b9ccc6cf398cfb44d3d39d7d521a6e[m
+Author: Matthew Keesey <mattkeesey@hotmail.com>
+Date:   Sat Jan 11 14:57:50 2014 -0600
+
+    Initial commit
