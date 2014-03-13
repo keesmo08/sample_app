@@ -16,10 +16,24 @@ class User < ActiveRecord::Base
 	                  uniqueness: { case_sensitive: false }
 	has_secure_password
 	before_save { email.downcase! }
-	validates :password, length: { minimum: 6 }
+	validates :password, length: { minimum: 6 }, :allow_blank => true
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
+	end
+
+	#duplicate from module from above expect takes a DB column
+	def generate_token(column)
+		begin
+			self[column] = SecureRandom.urlsafe_base64
+		end while User.exists?(column => self[column])
+	end
+
+	def send_password_reset
+		generate_token(:password_reset_token)
+		self.password_reset_sent_at = Time.zone.now
+		save!
+		UserMailer.password_reset(self).deliver
 	end
 
 	def User.encrypt(token)
@@ -46,6 +60,8 @@ class User < ActiveRecord::Base
 	def feed
 		Micropost.from_users_followed_by(self)
 	end
+
+
 
 	private
 
