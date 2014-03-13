@@ -87,11 +87,13 @@ SampleApp::Application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'www.gmail.com',
+    domain:               'gmail.com',
     user_name:            'matthew.keesey@gmail.com',
     password:             'Tennis101',
     authentication:       'plain',
     enable_starttls_auto: true  }
+
+  config.autoload_paths += %W(#{config.root}/lib)
 
 
 end
