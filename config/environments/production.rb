@@ -91,6 +91,9 @@ SampleApp::Application.configure do
   #  :domain =>         'heroku.com',
  #   :authentication => :plain} 
 #}
+
+Rails.application.routes.default_url_options[:host] = 'smtp.gmail.com'
+
 ActionMailer::Base.delivery_method = :smtp
 
 config.action_mailer.smtp_settings = {
