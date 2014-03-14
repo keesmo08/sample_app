@@ -82,18 +82,16 @@ SampleApp::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # Config email to send using gmail account
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            'matthew.keesey@gmail.com',
-    password:             'Tennis101',
-    authentication:       'plain',
-    enable_starttls_auto: true  }
-
-  config.autoload_paths += %W(#{config.root}/lib)
+  # Config email to send using Mandrill
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+}
+ActionMailer::Base.delivery_method = :smtp
 
 
 end
