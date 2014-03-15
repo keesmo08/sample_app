@@ -12,8 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 
 #Gem need for action mailer - MK - Added
 gem 'actionmailer', '4.0.2'
-#Gem need for Mandrill Email - MK - Added
-gem 'mandrill-api'
+
 
 
 
@@ -61,6 +60,8 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  #Gem need for Mandrill Email - MK - Added
+  gem 'mandrill-api'
 
 end
 
