@@ -103,6 +103,6 @@ config.action_mailer.smtp_settings = {
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
 }
-Rails.application.routes.default_url_options[:host] = 'smtp.gmail.com'
+Rails.application.routes.default_url_options[:host] = 'safe-ravine-6366.herokuapp.com'
 
 end
