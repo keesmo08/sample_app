@@ -82,7 +82,7 @@ SampleApp::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp #MK - Added for email delivery
   # Config email to send using Mandrill
  # ActionMailer::Base.smtp_settings = {
   #   :port =>           '587',
