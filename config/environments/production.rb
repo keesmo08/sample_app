@@ -82,27 +82,27 @@ SampleApp::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  ActionMailer::Base.delivery_method = :smtp
   # Config email to send using Mandrill
-  #ActionMailer::Base.smtp_settings = {
- #   :port =>           '587',
- #   :address =>        'smtp.mandrillapp.com',
-    #:user_name =>      ENV['MANDRILL_USERNAME'],
-   # :password =>       ENV['MANDRILL_APIKEY'],
-  #  :domain =>         'heroku.com',
- #   :authentication => :plain} 
-#}
-
-Rails.application.routes.default_url_options[:host] = 'smtp.gmail.com'
-
-ActionMailer::Base.delivery_method = :smtp
-
-config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
- authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
+  ActionMailer::Base.smtp_settings = {
+     :port =>           '587',
+     :address =>        'smtp.mandrillapp.com',
+     :user_name =>      ENV['MANDRILL_USERNAME'],
+     :password =>       ENV['MANDRILL_APIKEY'],
+     :domain =>         'heroku.com',
+     :authentication => :plain} 
 }
+Rails.application.routes.default_url_options[:host] = 'smtp.mandrillapp.com'
+
+
+#config.action_mailer.smtp_settings = {
+#  address: "smtp.gmail.com",
+#  port: 587,
+#  authentication: "plain",
+#  enable_starttls_auto: true,
+#  user_name: ENV["GMAIL_USERNAME"],
+#  password: ENV["GMAIL_PASSWORD"]
+#}
+#Rails.application.routes.default_url_options[:host] = 'smtp.gmail.com'
 
 end
