@@ -90,7 +90,7 @@ SampleApp::Application.configure do
      :user_name =>      ENV['MANDRILL_USERNAME'],
      :password =>       ENV['MANDRILL_APIKEY'],
      :domain =>         'heroku.com',
-     :authentication => :plain} 
+     :authentication => :plain 
   }
   
 =begin - SET TO USE GMAIL - THIS IS TESTED WORKING CODE
