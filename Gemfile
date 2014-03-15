@@ -62,7 +62,6 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   #Gem need for Mandrill Email - MK - Added
   gem 'mandrill-api'
-
 end
 
 # Use ActiveModel has_secure_password
