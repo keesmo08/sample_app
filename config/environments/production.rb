@@ -84,25 +84,27 @@ SampleApp::Application.configure do
 
   ActionMailer::Base.delivery_method = :smtp #MK - Added for email delivery
   # Config email to send using Mandrill
- # ActionMailer::Base.smtp_settings = {
-  #   :port =>           '587',
-  #   :address =>        'smtp.mandrillapp.com',
-  #   :user_name =>      ENV['MANDRILL_USERNAME'],
-  #   :password =>       ENV['MANDRILL_APIKEY'],
-  #   :domain =>         'heroku.com',
-  #   :authentication => :plain} 
-#}
-#Rails.application.routes.default_url_options[:host] = 'smtp.mandrillapp.com'
+  ActionMailer::Base.smtp_settings = {
+     :port =>           '587',
+     :address =>        'smtp.mandrillapp.com',
+     :user_name =>      ENV['MANDRILL_USERNAME'],
+     :password =>       ENV['MANDRILL_APIKEY'],
+     :domain =>         'heroku.com',
+     :authentication => :plain} 
+  }
+  
+=begin - SET TO USE GMAIL - THIS IS TESTED WORKING CODE
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
+  }
+=end
 
-
-config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-}
-Rails.application.routes.default_url_options[:host] = 'safe-ravine-6366.herokuapp.com'
+  # MK ADDED - Use to link the email url in email back to the right spot.
+  Rails.application.routes.default_url_options[:host] = 'safe-ravine-6366.herokuapp.com'
 
 end
