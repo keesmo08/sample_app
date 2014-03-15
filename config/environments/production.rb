@@ -84,7 +84,7 @@ SampleApp::Application.configure do
 
   ActionMailer::Base.delivery_method = :smtp #MK - Added for email delivery
   # Config email to send using Mandrill
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.smtp_settings = {
      :port =>           '587',
      :address =>        'smtp.mandrillapp.com',
      :user_name =>      ENV['MANDRILL_USERNAME'],
